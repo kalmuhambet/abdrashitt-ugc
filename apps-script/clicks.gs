@@ -3,7 +3,7 @@
 // Если SPREADSHEET_ID пустой, при первом событии скрипт сам создаёт таблицу
 // «Клики по карточкам — МК» в вашем Google Drive и запоминает её.
 // Деплой: Deploy → New deployment → Web app → Execute as: Me, Who has access: Anyone.
-const SPREADSHEET_ID = '';
+const SPREADSHEET_ID = '1qI1bWd6n_deHPEku4coU7vJcePLz4TS5XTYHDgn0JgE'; // «Воронка сайта — АБДР (клики → заявки)»
 const SHEET_NAME = 'Клики';
 
 const COLUMNS = [
