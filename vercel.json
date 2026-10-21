@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/t/:account", "destination": "/?utm_source=tiktok&utm_medium=bio&utm_content=:account", "permanent": false },
+    { "source": "/t/:account/:product", "destination": "/?utm_source=tiktok&utm_medium=bio&utm_content=:account&p=:product", "permanent": false },
+    { "source": "/v/:account/:video", "destination": "/?utm_source=tiktok&utm_medium=video&utm_content=:account&utm_term=:video", "permanent": false },
+    { "source": "/ig/:account", "destination": "/?utm_source=instagram&utm_medium=bio&utm_content=:account", "permanent": false },
+    { "source": "/yt/:video", "destination": "/?utm_source=youtube&utm_medium=description&utm_term=:video", "permanent": false },
+    { "source": "/yt/:video/:product", "destination": "/?utm_source=youtube&utm_medium=description&utm_term=:video&p=:product", "permanent": false }
+  ]
+}
