@@ -13,7 +13,7 @@ const endpoints = {
   program: 'https://script.google.com/macros/s/AKfycbyu6g-4K0j_pmKvakx5g1qmTGKwEghweBXLwl8wWLtQ7uPA_afecewQl9BtFrMkOlnt1w/exec',
 };
 // Web App URL скрипта apps-script/clicks.gs (визиты, открытия карточек, начало формы, заявки)
-const trackEndpoint = 'https://script.google.com/macros/s/AKfycby7K0HlrhRG0seTMFC8oM3gchqlK4s68KSGuxefT3kbCl4uXSCcf4yRw1PrxiYU7Xc4TA/exec';
+const trackEndpoint = 'https://script.google.com/macros/s/AKfycbxAWiVChx1nrkQELebkYuHqmu-fITBFDJE_l7DmWi9wFQj3XFsqok4E7pc-qiVqtEBG2Q/exec';
 /* ======================================================================== */
 
 const products = {
