@@ -151,7 +151,8 @@ document.addEventListener('click', e => {
   if (v && !v.querySelector('iframe')) {
     track('video_play', modal.dataset.product || '', v.dataset.video);
     if (window.__NO_EMBED) { window.open('https://youtu.be/' + v.dataset.video, '_blank', 'noopener'); return; }
-    v.insertAdjacentHTML('beforeend', `<iframe src="https://www.youtube-nocookie.com/embed/${v.dataset.video}?autoplay=1&rel=0&playsinline=1" title="${v.getAttribute('aria-label')}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`);
+    // YouTube требует адрес сайта (Referer + origin), иначе плеер показывает «Ошибка 153»
+    v.insertAdjacentHTML('beforeend', `<iframe src="https://www.youtube.com/embed/${v.dataset.video}?autoplay=1&rel=0&playsinline=1&origin=${encodeURIComponent(location.origin)}" title="${v.getAttribute('aria-label')}" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>`);
   }
 });
 
@@ -170,6 +171,7 @@ function render(id, presetRequest) {
   document.querySelector('#modal-lead').textContent = d.lead;
   let body = '';
   if (d.video) body += `<button type="button" class="modal-video" data-video="${d.video}" aria-label="${d.videoLabel || 'Видео'}"><img src="https://i.ytimg.com/vi/${d.video}/hqdefault.jpg" alt="" onerror="this.onerror=null;this.src='${d.image}'"><span class="play">▶</span><span class="vlabel">${d.videoLabel || 'Видео'}</span></button>`;
+  if (d.video) body += `<a class="video-fallback" href="https://youtu.be/${d.video}" target="_blank" rel="noopener" data-lesson-fallback>Видео ашылмаса — YouTube-та көру →</a>`;
   if (d.prices) body += `<div class="modal-prices">${d.prices.map(([f, p]) => `<div><span>${f}</span><b>${p}</b></div>`).join('')}</div>`;
   if (d.section) body += `<div class="modal-section-title">${d.section}</div><ul>${d.items.map(x => `<li>${x}</li>`).join('')}</ul>`;
   if (d.extra) body += `<p class="modal-extra">${d.extra}</p>`;

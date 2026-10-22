@@ -232,3 +232,5 @@ footer a{color:var(--gold-2);text-decoration:none;letter-spacing:.04em;font-size
 
 .lesson-video{margin-top:14px}
 .lesson-link{display:flex;align-items:center;justify-content:center;text-decoration:none}
+
+.video-fallback{display:block;margin:-8px 0 16px;text-align:center;font-size:14px;color:var(--gold-2);text-decoration:none}
